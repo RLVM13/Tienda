@@ -19,30 +19,16 @@ Categorias:
 15-20 mujer(6)
 */
 
-
 async function consultarApi() {
     await fetch("https://fakestoreapi.com/products")
         .then((res) => res.json()) // Tranforma datos a JSON para tratar en JS {}
         .then((data) => {
             for (let i = 0; i < 8; i++) {
-                /*  let cod_id = data[i].id;
-                 let titulo = data[i].title;
-                 let precio = data[i].price;
-                 let descripcion = data[i].description;
-                 let categoria = data[i].category;
-                 let imagen = data[i].imagen;
-                 let tasa = data[i].rating.rate;
-                 let stock = data[i].rating.count; */
-                //console.log(data[i].title);
                 imagenDescripcion(data, i);
-                console.log(data);
             }
-            for (i = 8; i < 12; i++) {
-                console.log(data);
+            for (i = 8; i < 21; i++) {
                 imagenBotones(data, i);
             }
-            //console.log(data);
-
         });
     return;
 }
@@ -56,42 +42,32 @@ function imagenDescripcion(objeto, indice) {
 }
 
 function imagenBotones(objeto, indice) {
-    let nombre =`<a href="#">${objeto[indice].title}</a>`;
+    let nombre = `<a href="#">${objeto[indice].title}</a>`;
     nombre += `<div class="ratting">`;
-    /* for(let j=0; i < Math.round(`${objeto[indice].rate}`);j++){
-        console.log(Math.round(`${objeto[indice].rate}`));
+    for (let j = 0; j < Math.round(`${objeto[indice].rating.rate}`); j++) {
         nombre += `<i class="fa fa-star"></i>`;
-    } */
-    nombre += `<i class="fa fa-star"></i>`;
-    nombre += `<i class="fa fa-star"></i>`;
-    nombre += `<i class="fa fa-star"></i>`;
-    nombre += `<i class="fa fa-star"></i>`;
+    }
     nombre += `</div>`;
     document.getElementById("nombre" + indice).innerHTML = nombre;
 
-    let datos = `<a href = "product-detail.html">`;
+    let datos = `<a href = "productos.html">`;
     datos += `<img src = "${objeto[indice].image}" /></a>`;
     datos += `<div class="product-action"><a href="#"><i class="fa fa-cart-plus"></i></a>`;
     datos += `<a href = "#"><i class="fa fa-heart"></i></a>`;
     datos += `<a href = "#"><i class="fa fa-search"></i></a></div>`;
     document.getElementById("producto" + indice).innerHTML = datos;
 
-    let precio = `<h3><span>€</span>${objeto[indice].price }</h3>`;
+    let precio = `<h3>${objeto[indice].price}</h3><span>€</span>`;
     precio += `<a class="btn" href = "" ><i class="fa fa-shopping-cart"></i>Comprar</a>`;
     document.getElementById("precio" + indice).innerHTML = precio;
 }
 
 
 
-
-
-
-
-
 (function ($) {
     "use strict";
 
-    // Dropdown on mouse hover
+    // Menú desplegable al pasar el mouse
     $(document).ready(function () {
         function toggleNavbarMethod() {
             if ($(window).width() > 768) {
@@ -109,7 +85,7 @@ function imagenBotones(objeto, indice) {
     });
 
 
-    // Back to top button
+    // Botón volver al principio
     $(window).scroll(function () {
         if ($(this).scrollTop() > 100) {
             $('.back-to-top').fadeIn('slow');
@@ -123,7 +99,7 @@ function imagenBotones(objeto, indice) {
     });
 
 
-    // Header slider
+    // Control deslizante de encabezado
     $('.header-slider').slick({
         autoplay: true,
         dots: true,
@@ -133,7 +109,7 @@ function imagenBotones(objeto, indice) {
     });
 
 
-    // Product Slider 4 Column
+    // Control deslizante de producto de 4 columnas
     $('.product-slider-4').slick({
         autoplay: true,
         infinite: true,
@@ -169,7 +145,7 @@ function imagenBotones(objeto, indice) {
     });
 
 
-    // Product Slider 3 Column
+    //Control deslizante de producto de 3 columnas
     $('.product-slider-3').slick({
         autoplay: true,
         infinite: true,
@@ -199,7 +175,7 @@ function imagenBotones(objeto, indice) {
     });
 
 
-    // Product Detail Slider
+    // Control deslizante de detalles del producto
     $('.product-slider-single').slick({
         infinite: true,
         autoplay: true,
@@ -219,7 +195,7 @@ function imagenBotones(objeto, indice) {
     });
 
 
-    // Brand Slider
+    // Control deslizante de marca
     $('.brand-slider').slick({
         speed: 5000,
         autoplay: true,
@@ -262,7 +238,7 @@ function imagenBotones(objeto, indice) {
     });
 
 
-    // Review slider
+    //Control deslizante de revisión
     $('.review-slider').slick({
         autoplay: true,
         dots: false,
@@ -280,7 +256,7 @@ function imagenBotones(objeto, indice) {
     });
 
 
-    // Widget slider
+    // Control deslizante de widgets
     $('.sidebar-slider').slick({
         autoplay: true,
         dots: false,
@@ -290,7 +266,7 @@ function imagenBotones(objeto, indice) {
     });
 
 
-    // Quantity
+    // Cantidad
     $('.qty button').on('click', function () {
         var $button = $(this);
         var oldValue = $button.parent().find('input').val();
@@ -307,7 +283,7 @@ function imagenBotones(objeto, indice) {
     });
 
 
-    // Shipping address show hide
+    // Dirección de envío mostrar ocultar
     $('.checkout #shipto').change(function () {
         if ($(this).is(':checked')) {
             $('.checkout .shipping-address').slideDown();
@@ -317,7 +293,7 @@ function imagenBotones(objeto, indice) {
     });
 
 
-    // Payment methods show hide
+    // Métodos de pago mostrar ocultar
     $('.checkout .payment-method .custom-control-input').change(function () {
         if ($(this).prop('checked')) {
             var checkbox_id = $(this).attr('id');

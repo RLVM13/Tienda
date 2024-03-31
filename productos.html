@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Lasso Store - Productos</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="Palabras clave de la tienda" name="keywords">
+        <meta content="Descripciones de producto" name="description">
+
+        <!-- Favicon -->
+        <link href="./img/tienda_favicon.jpg" rel="icon">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Source+Code+Pro:700,900&display=swap" rel="stylesheet">
+
+        <!-- CSS Libraries -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link href="lib/slick/slick.css" rel="stylesheet">
+        <link href="lib/slick/slick-theme.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="style.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <!-- Top bar Start Negro-->
+        <div class="top-bar">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <i class="fa fa-envelope"></i>
+                        contacto@email.com
+                    </div>
+                    <div class="col-sm-6">
+                        <i class="fa fa-phone-alt"></i>
+                        +34-666 66 66 66
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Top bar End -->
+        
+        <!-- Nav Bar Start Azul-->
+        <div class="nav">
+            <div class="container-fluid">
+                <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+                    <a href="#" class="navbar-brand">MENU</a>
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                        <div class="navbar-nav mr-auto">
+                            <a href="index.html" class="nav-item nav-link active">Home</a>
+                            <a href="productos.html" class="nav-item nav-link">Productos</a>
+                            <!-- <a href="product-detail.html" class="nav-item nav-link">Detalles de Producto</a> -->
+                            <a href="carro.html" class="nav-item nav-link">Carrito</a>
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Usuarios</a>
+                                <div class="dropdown-menu">
+                                    <a href="#" class="dropdown-item">Registro & Login</a>
+                                    <a href="#" class="dropdown-item">Facturación</a>
+                                    <a href="#" class="dropdown-item">Mi cuenta</a>
+                                </div>
+                            </div>
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Otras Páginas</a>
+                                <div class="dropdown-menu">
+                                    <a href="deseos.html" class="dropdown-item">Lista de Deseos</a>
+                                    <a href="contacto.html" class="dropdown-item">Contacto</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="navbar-nav ml-auto">
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Usuarios</a>
+                                <div class="dropdown-menu">
+                                    <a href="#" class="dropdown-item">Registro & Login</a>
+                                    <a href="#" class="dropdown-item">Facturación</a>
+                                    <a href="#" class="dropdown-item">Mi cuenta</a>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- Nav Bar End -->      
+        
+        <!-- Bottom Bar Start Buscador-->
+        <div class="bottom-bar">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-md-3">
+                        <div class="logo">
+                            <a href="index.html">
+                                <img src="img/LassoStore.png" alt="Logo">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="search">
+                            <input type="text" placeholder="Buscar">
+                            <button><i class="fa fa-search"></i></button>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="user">
+                            <a href="deseos.html" class="btn wishlist">
+                                <i class="fa fa-heart"></i>
+                                <span>(0)</span>
+                            </a>
+                            <a href="carro.html" class="btn cart">
+                                <i class="fa fa-shopping-cart"></i>
+                                <span>(0)</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bottom Bar End -->
+        
+        <!-- Breadcrumb Start Ruta-->
+    <div class="breadcrumb-wrap">
+        <div class="container-fluid">
+            <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Productos</a></li>
+                <li class="breadcrumb-item active">Listado de Productos</li>
+            </ul>
+        </div>
+    </div>
+    <!-- Breadcrumb End -->
+        
+        <!-- Product List Start -->
+        <div class="product-view">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="product-view-top">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="product-search">
+                                                <input type="text" id="miBusqueda" name="Busqueda" placeholder="Buscar">
+                                                <button><i class="fa fa-search"></i></button>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="product-short">
+                                                <div class="dropdown">
+                                                    <div class="dropdown-toggle" data-toggle="dropdown">Productos por categoría</div>
+                                                    <div class="dropdown-menu dropdown-menu-right">
+                                                        <a href="#" class="dropdown-item">Moda Hombre</a>
+                                                        <a href="#" class="dropdown-item">Moda Mujer</a>
+                                                        <a href="#" class="dropdown-item">Joyería</a>
+                                                        <a href="#" class="dropdown-item">Electrónica</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="product-price-range">
+                                                <div class="dropdown">
+                                                    <div class="dropdown-toggle" data-toggle="dropdown">Orden por Precio</div>
+                                                    <div class="dropdown-menu dropdown-menu-right">
+                                                        <a href="#" class="dropdown-item">0€ a 50€</a>
+                                                        <a href="#" class="dropdown-item">51€ a 100€</a>
+                                                        <a href="#" class="dropdown-item">101€ a 150€</a>
+                                                        <a href="#" class="dropdown-item">151€ a 200€</a>
+                                                        <a href="#" class="dropdown-item">201€ a 250€</a>
+                                                        <a href="#" class="dropdown-item">251€ a 300€</a>
+                                                        <a href="#" class="dropdown-item">Más de 301€</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4">
+                                <div class="product-item">
+                                    <div class="product-title" id="name0"></div>
+                                    <div class="product-image" id="producto0"></div>
+                                    <div class="product-price" id="precio0"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="product-item">
+                                    <div class="product-title" id="name1"></div>
+                                    <div class="product-image" id="producto1"></div>
+                                    <div class="product-price" id="precio1"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="product-item">
+                                    <div class="product-title" id="name2"></div>
+                                    <div class="product-image" id="producto2"></div>
+                                    <div class="product-price" id="precio2"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="product-item">
+                                    <div class="product-title" id="name3"></div>
+                                    <div class="product-image" id="producto3"></div>
+                                    <div class="product-price" id="precio3"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="product-item">
+                                    <div class="product-title" id="name4"></div>
+                                    <div class="product-image" id="producto4"></div>
+                                    <div class="product-price" id="precio4"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="product-item">
+                                    <div class="product-title" id="name5"></div>
+                                    <div class="product-image" id="producto5"></div>
+                                    <div class="product-price" id="precio5"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="product-item">
+                                    <div class="product-title" id="name6"></div>
+                                    <div class="product-image" id="producto6"></div>
+                                    <div class="product-price" id="precio6"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="product-item">
+                                    <div class="product-title" id="name7"></div>
+                                    <div class="product-image" id="producto7"></div>
+                                    <div class="product-price" id="precio7"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="product-item">
+                                    <div class="product-title" id="name8"></div>
+                                    <div class="product-image" id="producto8"></div>
+                                    <div class="product-price" id="precio8"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="product-item">
+                                    <div class="product-title" id="name9"></div>
+                                    <div class="product-image" id="producto9"></div>
+                                    <div class="product-price" id="precio9"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="product-item">
+                                    <div class="product-title" id="name10"></div>
+                                    <div class="product-image" id="producto10"></div>
+                                    <div class="product-price" id="precio10"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="product-item">
+                                    <div class="product-title" id="name11"></div>
+                                    <div class="product-image" id="producto11"></div>
+                                    <div class="product-price" id="precio11"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="product-item">
+                                    <div class="product-title" id="name12"></div>
+                                    <div class="product-image" id="producto12"></div>
+                                    <div class="product-price" id="precio12"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="product-item">
+                                    <div class="product-title" id="name13"></div>
+                                    <div class="product-image" id="producto13"></div>
+                                    <div class="product-price" id="precio13"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="product-item">
+                                    <div class="product-title" id="name14"></div>
+                                    <div class="product-image" id="producto14"></div>
+                                    <div class="product-price" id="precio14"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="product-item">
+                                    <div class="product-title" id="name15"></div>
+                                    <div class="product-image" id="producto15"></div>
+                                    <div class="product-price" id="precio15"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="product-item">
+                                    <div class="product-title" id="name16"></div>
+                                    <div class="product-image" id="producto16"></div>
+                                    <div class="product-price" id="precio16"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="product-item">
+                                    <div class="product-title" id="name17"></div>
+                                    <div class="product-image" id="producto17"></div>
+                                    <div class="product-price" id="precio17"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="product-item">
+                                    <div class="product-title" id="name18"></div>
+                                    <div class="product-image" id="producto18"></div>
+                                    <div class="product-price" id="precio18"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="product-item">
+                                    <div class="product-title" id="name19"></div>
+                                    <div class="product-image" id="producto19"></div>
+                                    <div class="product-price" id="precio19"></div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        
+                        <!-- Pagination Start -->
+                        <div class="col-md-12">
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination justify-content-center">
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="#" tabindex="-1">Anterior</a>
+                                    </li>
+                                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">Siguiente</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <!-- Pagination Start -->
+                    </div>           
+                    
+                    <!-- Side Bar Start -->
+                <div class="col-lg-4 sidebar">
+                    <div class="sidebar-widget category">
+                        <h2 class="title">Menú Principal</h2>
+                        <nav class="navbar bg-light">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="index.html"><i class="fa fa-home"></i>Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./Mujer.html"><i class="fa fa-female"></i>Moda Mujer</a>
+                                </li>
+                                <!-- <li class="nav-item">
+                                        <a class="nav-link" href="#"><i class="fa fa-child"></i>Niños</a>
+                                    </li> -->
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./Hombre.html"><i class="fa fa-tshirt"></i>Moda Hombre</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./Joyeria.html"><i class="fa fa-mobile-alt"></i>Joyería</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./Electronica.html"><i class="fa fa-microchip"></i>Electronica</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                        
+                        
+                    </div>
+                    <!-- Side Bar End -->
+                </div>
+            </div>
+        </div>
+        <!-- Product List End -->  
+        
+        <!-- Brand Start -->
+        <!-- <div class="brand">
+            <div class="container-fluid">
+                <div class="brand-slider">
+                    <div class="brand-item"><img src="img/brand-1.png" alt=""></div>
+                    <div class="brand-item"><img src="img/brand-2.png" alt=""></div>
+                    <div class="brand-item"><img src="img/brand-3.png" alt=""></div>
+                    <div class="brand-item"><img src="img/brand-4.png" alt=""></div>
+                    <div class="brand-item"><img src="img/brand-5.png" alt=""></div>
+                    <div class="brand-item"><img src="img/brand-6.png" alt=""></div>
+                </div>
+            </div>
+        </div> -->
+        <!-- Brand End -->
+        
+        <!-- Footer Info Start -->
+    <div class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget">
+                        <h2>Contacto</h2>
+                        <div class="contact-info">
+                            <p><i class="fa fa-map-marker"></i>Calle Recoletos, 15 - Madrid</p>
+                            <p><i class="fa fa-envelope"></i>contacto@email.com</p>
+                            <p><i class="fa fa-phone"></i>+34-666 66 66 66</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget">
+                        <h2>Síguenos</h2>
+                        <div class="contact-info">
+                            <div class="social">
+                                <a href=""><i class="fab fa-twitter"></i></a>
+                                <a href=""><i class="fab fa-facebook-f"></i></a>
+                                <a href=""><i class="fab fa-linkedin-in"></i></a>
+                                <a href=""><i class="fab fa-instagram"></i></a>
+                                <a href=""><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget">
+                        <h2>Compañía</h2>
+                        <ul>
+                            <li><a href="#">Sobre Nosotros</a></li>
+                            <li><a href="#">Política de Privacidad</a></li>
+                            <li><a href="#">Términos y Condiciones</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget">
+                        <h2>Información de Compra</h2>
+                        <ul>
+                            <li><a href="#">Política de Pagos</a></li>
+                            <li><a href="#">Política de Envíos</a></li>
+                            <li><a href="#">Política de Devoluciones</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+                
+                <div class="row payment align-items-center">
+                    <div class="col-md-6">
+                        <div class="payment-method">
+                            <h2>Aceptamos:</h2>
+                            <img src="img/payment-method.png" alt="Payment Method" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="payment-security">
+                            <h2>Secured By:</h2>
+                            <img src="img/godaddy.svg" alt="Payment Security" />
+                            <img src="img/norton.svg" alt="Payment Security" />
+                            <img src="img/ssl.svg" alt="Payment Security" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+        
+        <!-- Footer Negro Start -->
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 copyright">
+                    <p>Desarrollado por &copy; <a
+                            href="https://www.linkedin.com/in/rafael-lasso-de-la-vega-25a01221/">Rafael Lasso de la
+                            Vega</a>. All Rights Reserved</p>
+                </div>
+
+                <div class="col-md-6 template-by">
+                    <p>Proyecto Personal <a href="https://www.thebridge.tech/bootcamps/desarrollo-web-full-stack">Full
+                            Stack Developer en The Bridge</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer Negro End -->     
+        
+        <!-- Back to Top -->
+        <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+        
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/slick/slick.min.js"></script>
+        
+        <!-- Template Javascript -->
+        <script src="./js/main.js"></script>
+        <script src="./js/productos.js"></script>
+    </body>
+</html>
