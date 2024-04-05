@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Proyecto Personal Tienda - Registro</title>
+    <title>Proyecto Personal Tienda - Registro & Login</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Palabras clave de la tienda" name="keywords">
     <meta content="Descripciones de producto" name="description">
@@ -43,7 +43,7 @@
     </div>
     <!-- Top bar End -->
 
-    <!-- Nav Bar Start -->
+    <!-- Nav Bar Start Azul-->
     <div class="nav">
         <div class="container-fluid">
             <nav class="navbar navbar-expand-md bg-dark navbar-dark">
@@ -55,34 +55,35 @@
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav mr-auto">
                         <a href="index.html" class="nav-item nav-link active">Home</a>
-                        <a href="product-list.html" class="nav-item nav-link">Productos</a>
-                        <a href="product-detail.html" class="nav-item nav-link">Detalles de Producto</a>
-                        <a href="cart.html" class="nav-item nav-link">Carrito</a>
-                        <a href="checkout.html" class="nav-item nav-link">Checkout</a>
-                        <a href="my-account.html" class="nav-item nav-link">Mi cuenta</a>
+                        <a href="productos.html" class="nav-item nav-link">Productos</a>
+                        <!-- <a href="product-detail.html" class="nav-item nav-link">Detalles de Producto</a> -->
+                        <a href="carro.html" class="nav-item nav-link">Carrito</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Usuarios</a>
+                            <div class="dropdown-menu">
+                                <a href="login.html" class="dropdown-item">Registro & Login</a>
+                                <a href="#" class="dropdown-item">Facturación</a>
+                                <a href="#" class="dropdown-item">Mi cuenta</a>
+                            </div>
+                        </div>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Otras Páginas</a>
                             <div class="dropdown-menu">
-                                <a href="wishlist.html" class="dropdown-item">Lista de Deseos</a>
-                                <a href="login.html" class="dropdown-item">Login & Registro</a>
-                                <a href="contact.html" class="dropdown-item">Contacto</a>
+                                <a href="deseos.html" class="dropdown-item">Lista de Deseos</a>
+                                <a href="contacto.html" class="dropdown-item">Contacto</a>
                             </div>
                         </div>
                     </div>
                     <div class="navbar-nav ml-auto">
                         <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Usuarios</a>
-                            <div class="dropdown-menu">
-                                <a href="#" class="dropdown-item">Login</a>
-                                <a href="#" class="dropdown-item">Registro</a>
-                            </div>
+                            <p class="nav-link dropdown-toggle" data-toggle="dropdown" id="userInSystem"></p>
                         </div>
                     </div>
                 </div>
             </nav>
         </div>
     </div>
-    <!-- Nav Bar End -->
+    <!-- Nav Bar End -->      
 
     <!-- Bottom Bar Start -->
     <div class="bottom-bar">
@@ -103,11 +104,11 @@
                 </div>
                 <div class="col-md-3">
                     <div class="user">
-                        <a href="wishlist.html" class="btn wishlist">
+                        <a href="deseos.html" class="btn wishlist">
                             <i class="fa fa-heart"></i>
                             <span>(0)</span>
                         </a>
-                        <a href="cart.html" class="btn cart">
+                        <a href="carro.html" class="btn cart">
                             <i class="fa fa-shopping-cart"></i>
                             <span>(0)</span>
                         </a>
@@ -134,32 +135,32 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-6">
-                    <form id="signup-form">
+                    <form id="signup-form" action="#" method="POST">
                         <div class="register-form">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <label for="signup-user">Nombre</label>
-                                    <input id="signup-user" name="signup-user" class="form-control" type="text" placeholder="Indica tu nombre">
+                                    <label for="user">Nombre</label>
+                                    <input id="user" name="user" class="form-control" type="text" placeholder="Indica tu nombre">
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="signup-lastname">Apellidos</label>
-                                    <input id="signup-lastname" name="signup-lastname" class="form-control" type="text" placeholder="Indica tus apellidos">
+                                    <label for="lastname">Apellidos</label>
+                                    <input id="lastname" name="lastname" class="form-control" type="text" placeholder="Indica tus apellidos">
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="signup-email">E-mail</label>
-                                    <input id="signup-email" name="signup-email" class="form-control" type="text" placeholder="Indica tu E-mail">
+                                    <label for="email">E-mail</label>
+                                    <input id="email" name="email" class="form-control" type="text" placeholder="Indica tu E-mail">
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="signup-movil">Teléfono / Móvil</label>
-                                    <input id="signup-movil" name="signup-movil" class="form-control" type="text" placeholder="Indica un teléfono de contacto">
+                                    <label for="movil">Teléfono / Móvil</label>
+                                    <input id="movil" name="movil" class="form-control" type="text" placeholder="Indica un teléfono de contacto">
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="signup-pass">Password</label>
-                                    <input id="signup-pass" name="signup-pass" class="form-control" type="text" placeholder="Asigna una Contraseña">
+                                    <label for="password">Password</label>
+                                    <input id="password" name="password" class="form-control" type="text" placeholder="Asigna una Contraseña">
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="signup-repass">Repite Password</label>
-                                    <input id="signup-repass" name="signup-repass" class="form-control" type="text" placeholder="Repite la Contraseña">
+                                    <label for="repass">Repite Password</label>
+                                    <input id="repass" name="repass" class="form-control" type="text" placeholder="Repite la Contraseña">
                                 </div>
                                 <div class="col-md-12">
                                     <button class="btn" type="submit">Registrarse</button>
@@ -169,7 +170,7 @@
             </div>
         </div>
         <div class="col-lg-6">
-            <form id="login-form">
+            <form id="login-form" action="#" method="POST">
                 <div class="login-form">
                     <div class="row">
                         <div class="col-md-6">
@@ -188,7 +189,8 @@
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <button class="btn" type="submit">Login</button>
+                            <button class="btn" type="submit">Log-in</button>
+                            <button id="salir" class="btn" type="submit">Log-out</button>
                         </div>
                     </div>
                 </div>
@@ -301,10 +303,18 @@
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/slick/slick.min.js"></script>
 
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
+
     <div id="user-data"></div>
 
     <!-- Template Javascript -->
-    <script src="login.js"></script>
+    <script src="./js/login.js"></script>
 </body>
 
 </html>
